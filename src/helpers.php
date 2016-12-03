@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Identicon;
 
 use Identicon\Identicon;
@@ -20,7 +22,7 @@ use Identicon\Identicon;
  *
  * @return string
  */
-function identicon($value) : string
+function identicon($value): string
 {
     $generator = config('identicon.generator');
 

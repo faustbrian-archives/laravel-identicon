@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\Identicon;
 
 use BrianFaust\ServiceProvider\AbstractServiceProvider;
@@ -19,7 +21,7 @@ class IdenticonServiceProvider extends AbstractServiceProvider
     /**
      * Bootstrap the application services.
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishConfig();
     }
@@ -27,7 +29,7 @@ class IdenticonServiceProvider extends AbstractServiceProvider
     /**
      * Register the application services.
      */
-    public function register()
+    public function register(): void
     {
         parent::register();
 
@@ -43,7 +45,7 @@ class IdenticonServiceProvider extends AbstractServiceProvider
      *
      * @return array
      */
-    public function provides() : array
+    public function provides(): array
     {
         return array_merge(parent::provides(), ['identicon']);
     }
@@ -53,7 +55,7 @@ class IdenticonServiceProvider extends AbstractServiceProvider
      *
      * @return string
      */
-    public function getPackageName() : string
+    public function getPackageName(): string
     {
         return 'identicon';
     }
