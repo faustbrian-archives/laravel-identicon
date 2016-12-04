@@ -32,7 +32,7 @@ trait HasIdenticon
         'to'   => 'avatar',
     ];
 
-    public static function bootHasIdenticon()
+    public static function bootHasIdenticon(): void
     {
         static::created(function ($model) {
             $identicon = identicon($model->{$model->identicon['from']});
