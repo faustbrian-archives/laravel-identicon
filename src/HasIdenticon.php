@@ -26,11 +26,14 @@ trait HasIdenticon
     public static function bootHasIdenticon(): void
     {
         static::created(function ($model) {
-            $identicon = identicon($model->{$model->identicon['from']});
-
-            $model->{$model->identicon['to']} = $identicon;
-
-            $model->save();
+            $model->generateIdenticon();
         });
+    }
+
+    public function generateIdenticon()
+    {
+        $identicon = identicon($this->{$this->identicon['from']});
+        $this->{$this->identicon['to']} = $identicon;
+        $this->save();
     }
 }
