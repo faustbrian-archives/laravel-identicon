@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Identicon.
  *
@@ -12,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace BrianFaust\Identicon;
+namespace BrianFaust\Identicon\Traits;
 
 use function BrianFaust\Identicon\identicon;
 
@@ -21,10 +18,10 @@ trait HasIdenticon
     /** @var array */
     public $identicon = [
         'from' => 'email',
-        'to'   => 'avatar',
+        'to' => 'avatar',
     ];
 
-    public static function bootHasIdenticon(): void
+    public static function bootHasIdenticon()
     {
         static::creating(function ($model) {
             $identicon = identicon($model->{$model->identicon['from']});

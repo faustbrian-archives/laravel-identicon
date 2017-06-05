@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Identicon.
  *
@@ -14,27 +11,27 @@ declare(strict_types=1);
 
 namespace BrianFaust\Identicon;
 
-use BrianFaust\ServiceProvider\AbstractServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use Identicon\Identicon;
 
-class IdenticonServiceProvider extends AbstractServiceProvider
+class IdenticonServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
      */
-    public function boot(): void
+    public function boot()
     {
-        $this->publishConfig();
+        $this->publishes([
+            __DIR__.'/../config/laravel-invoice.php' => config_path('laravel-invoice.php'),
+        ], 'config');
     }
 
     /**
      * Register the application services.
      */
-    public function register(): void
+    public function register()
     {
-        parent::register();
-
-        $this->mergeConfig();
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-invoice.php', 'laravel-invoice');
 
         $this->app->singleton('identicon', function ($app) {
             return new Identicon(new $app['config']['identicon']['generator']());
