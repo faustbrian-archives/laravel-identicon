@@ -11,8 +11,8 @@
 
 namespace BrianFaust\Identicon;
 
-use Illuminate\Support\ServiceProvider;
 use Identicon\Identicon;
+use Illuminate\Support\ServiceProvider;
 
 class IdenticonServiceProvider extends ServiceProvider
 {
