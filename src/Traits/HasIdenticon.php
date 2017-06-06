@@ -18,7 +18,7 @@ trait HasIdenticon
     /** @var array */
     public $identicon = [
         'from' => 'email',
-        'to'   => 'avatar',
+        'to' => 'avatar',
     ];
 
     public static function bootHasIdenticon()

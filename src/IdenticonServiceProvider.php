@@ -33,6 +33,14 @@ class IdenticonServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/laravel-invoice.php', 'laravel-invoice');
 
+        $this->registerBuilder();
+    }
+
+    /**
+     * Register the builder.
+     */
+    private function registerBuilder()
+    {
         $this->app->singleton('identicon', function ($app) {
             return new Identicon(new $app['config']['identicon']['generator']());
         });
