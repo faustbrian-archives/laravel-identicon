@@ -12,8 +12,8 @@
 namespace BrianFaust\Tests\Identicon\Facades;
 
 use BrianFaust\Identicon\Facades\Identicon;
-use BrianFaust\Tests\Identicon\AbstractTestCase;
 use GrahamCampbell\TestBenchCore\FacadeTrait;
+use BrianFaust\Tests\Identicon\AbstractTestCase;
 
 class IdenticonTest extends AbstractTestCase
 {
