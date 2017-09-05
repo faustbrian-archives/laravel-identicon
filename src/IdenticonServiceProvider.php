@@ -24,7 +24,7 @@ class IdenticonServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/laravel-identicon.php' => config_path('laravel-identicon.php'),
+            __DIR__.'/../resources/config/laravel-identicon.php' => config_path('laravel-identicon.php'),
         ], 'config');
     }
 
@@ -33,7 +33,7 @@ class IdenticonServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/laravel-identicon.php', 'laravel-identicon');
+        $this->mergeConfigFrom(__DIR__.'/../resources/config/laravel-identicon.php', 'laravel-identicon');
 
         $this->registerBuilder();
     }
