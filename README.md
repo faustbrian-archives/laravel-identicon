@@ -5,7 +5,7 @@
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ``` bash
-$ composer require faustbrian/laravel-flash
+$ composer require faustbrian/laravel-identicon
 ```
 
 ## Usage
