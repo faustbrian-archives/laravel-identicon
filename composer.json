@@ -1,12 +1,12 @@
 {
-    "name": "faustbrian/laravel-identicon",
+    "name": "artisanry/identicon",
     "description": "Identicon for Laravel",
-    "keywords": ["laravel", "framework", "Laravel-Identicon", "Laravel Identicon", "Brian Faust", "faustbrian"],
+    "keywords": ["laravel", "framework", "Laravel-Identicon", "Laravel Identicon"],
     "license": "MIT",
     "authors": [{
         "name": "Brian Faust",
-        "email": "hello@brianfaust.me",
-        "homepage": "https://brianfaust.me"
+        "email": "hello@basecode.sh",
+        "homepage": "https://basecode.sh"
     }],
     "require": {
         "php": "^7.1",
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "BrianFaust\\Identicon\\": "src/"
+            "Artisanry\\Identicon\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -28,7 +28,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "BrianFaust\\Tests\\Identicon\\": "tests"
+            "Artisanry\\Tests\\Identicon\\": "tests"
         }
     },
     "config": {
@@ -41,10 +41,10 @@
         },
         "laravel": {
             "providers": [
-                "BrianFaust\\Identicon\\IdenticonServiceProvider"
+                "Artisanry\\Identicon\\IdenticonServiceProvider"
             ],
             "aliases": {
-                "Identicon": "BrianFaust\\Identicon\\Facades\\Identicon"
+                "Identicon": "Artisanry\\Identicon\\Facades\\Identicon"
             }
         }
     },
